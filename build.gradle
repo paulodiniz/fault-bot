@@ -1,0 +1,33 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.50'
+    id 'org.springframework.boot' version '2.2.6.RELEASE'
+    id "org.jetbrains.kotlin.plugin.spring" version "1.3.71"
+    id "io.spring.dependency-management" version "1.0.9.RELEASE"
+}
+
+group 'memefetcher'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.2.6.RELEASE'
+    compile group: "org.jetbrains.kotlin", name: "kotlin-reflect", version: "1.2.71"
+    compile group: "com.fasterxml.jackson.module", name: "jackson-module-kotlin", version: "2.9.9"
+    compile group: 'khttp', name: 'khttp', version: '1.0.0'
+    compile group: 'org.json', name: 'json', version: '20180130'
+    compile group: 'com.cloudinary', name: 'cloudinary-http44', version: '1.25.0'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
