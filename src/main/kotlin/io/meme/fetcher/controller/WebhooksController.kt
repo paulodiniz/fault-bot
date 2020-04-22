@@ -28,16 +28,15 @@ class WebhooksController {
     }
 
     private fun slackMessageJSON(channelId: String?, imageUrl: String) : JSONObject {
-        val slackMessage = JSONObject()
-            .put("username", "meme bot")
-            .put("channel", channelId)
-            .put("response_type", "in_channel")
-
-        val block = JSONObject()
+        val block: JSONObject = JSONObject()
             .put("type", "image")
             .put("image_url", imageUrl)
             .put("alt_text", "funny gif")
 
-        return slackMessage.put("blocks", JSONArray(listOf(block)))
+        return JSONObject()
+            .put("username", "meme bot")
+            .put("channel", channelId)
+            .put("response_type", "in_channel")
+            .put("blocks", JSONArray(listOf(block)))
     }
 }

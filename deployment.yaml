@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: meme-maker
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: meme-maker
+    spec:
+      containers:
+        - name: meme-maker
+          image: paulodiniz/mememaker:v3
+          imagePullPolicy: Always
+
